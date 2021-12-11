@@ -9,7 +9,8 @@ module.exports = {
       },
       fontFamily: {
         'architect' : 'Architects Daughter, cursive',
-        'anton': 'Anton, sans-serif'
+        'anton': 'Anton, sans-serif',
+        'lato': 'Lato'
       }
     },
   },
