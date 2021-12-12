@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-section' : "url('/hero.png')",
+        'form-landing' : "url('/form-landing.svg')",
+        'bg-contact' : "url('/bg-contact.png')",
       },
       fontFamily: {
         'architect' : 'Architects Daughter, cursive',

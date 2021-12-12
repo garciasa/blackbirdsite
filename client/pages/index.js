@@ -6,7 +6,7 @@ export default function Home() {
     <>
     <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&family=Architects+Daughter&display=swap" rel="stylesheet" />
     </Head>
     <div className="flex flex-col bg-hero-section min-h-screen 2xl:mx-auto max-w-screen-2xl bg-cover bg-center lg:bg-left ">
@@ -15,7 +15,7 @@ export default function Home() {
           <Image src="/logo-web.svg" alt="" width="40" height="40" />
           <div className="flex flex-col ml-3">
             <span className="font-architect text-sm text-[#27292B] tracking-wider">BlackBird</span>
-            <span className="font-anton font-bold text-xs text-[#27292B] uppercase">Cultur Lab</span>
+            <span className="font-anton text-xs text-[#27292B] uppercase tracking-wider">Cultur Lab</span>
           </div>
         </div>
         <div className="hidden lg:flex space-x-10 mx-4">
@@ -42,43 +42,88 @@ export default function Home() {
         <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#4F5154]">farming life meet</h1>
       </div>
     </div>
-    <div className="flex flex-col h-screen w-full max-w-screen-2xl 2xl:mx-auto relative">
-      <div className="flex flex-1 flex-col my-5 mx-5 lg:flex-row">
-        <div className="flex flex-1 justify-center items-center">
-          <Image src="/photo-house.png" alt="photo description" width="700" height="400" className="rounded-lg" /> 
+    <div className="flex flex-col lg:h-screen w-full max-w-screen-2xl 2xl:mx-auto relative">
+      <div className="flex flex-1 flex-col lg:flex-row">
+        <div className="flex flex-1 my-7 mb-5 y-7 md:mb-1 lg:mx-7 px-10 mx-auto ">
+          <Image src="/photo-house.png" width="700" height="400" className="object-cover rounded-lg" />
         </div>
-        <div className="flex flex-col flex-1">
-          <div className="flex-1 my-7 tracking-wide text-lg px-5">
+        <div className="flex flex-col flex-1 text-xs md:text-sm xl:text-lg">
+          <div className="flex-1 md:my-7 tracking-wide px-5 lg:mx-0">
             <p className="font-lato text-justify">
-            Blackbird Cultur-Lab is run by Oisín O’Connell and Karla Sánchez.
+              Blackbird Cultur-Lab is a creative cultural laboratory based within a working farm that is
+              transitioning towards regenerative agriculture practices. It aims to provide an environment
+              for farmers, artists, academics, and practitioners from various disciplines to experiment and
+              work beyond traditional boundaries.
             </p>
-            <p className="font-lato my-5 text-justify">
+            <p className="font-lato my-3 text-justify">
+              Blackbird Cultur-Lab is run by Oisín O’Connell and Karla Sánchez.
+            </p>
+            <p className="font-lato my-3 text-justify">
               We both have years of experience of work in the arts, education, social sciences and agriculture.
               We are working to transition our farm from traditional methods to regenerative agriculture.
               We believe in the importance of developing and nurturing all the ecosystem processes; including community dynamics.
             </p>
           </div>
-          <div className="flex place-content-end">
-            <button className="mx-10 my-10 font-lato font-bold text-white shadow-lg rounded bg-[#574646] py-2 px-4">Learn more</button> 
+          <div className="flex items-center justify-center lg:place-content-end">
+            <button className="mx-10 md:my-10font-lato font-bold text-white shadow-lg rounded bg-[#574646] py-2 px-4">Learn more</button> 
           </div>
         </div>
       </div>
-      <div className="flex flex-col flex-1" >
-        <div className="flex-1">
-          block 2
+      <div className="flex flex-col flex-1 gap-2 sm:gap-0 mt-5 md:mt-0 "  >
+        <div className="flex flex-1 flex-col md:flex-row">
+          <div className="flex justify-center items-center mx-8 ">
+            <Image src="/oisin.png" alt="oisin" width="96" height="96" className="rounded-full hidden" /> 
+          </div>
+          <div className="flex-1 flex flex-col justify-center mx-2 ">
+            <blockquote className="relative p-4 border-l-2 border-[#f7b520] quote">
+              <p className="mb-2 text-sm lg:text-xl italic">
+                <span className="text-xl text-gray-400 leading-none">&ldquo;&nbsp;</span>
+                  There is an urgency to look at ecological processes in their broadest sense. We are all interconnected.
+                <span className="text-xl text-gray-400 leading-none">&ldquo;&nbsp;</span>
+              </p>
+              <cite className="text-sm mx-5 lg:text-lg">Oisí O'Connell</cite>
+            </blockquote>
+          </div>
         </div>
-        <div className="flex-1">
-          block 3
+        <div className="flex flex-1 flex-col-reverse md:flex-row lg:mb-5">
+          <div className="flex-1 flex flex-col justify-center mx-2 my-4 ">
+            <blockquote className="relative p-4 border-r-2 border-[#f7b520] mx-2 quote">
+              <p className="mb-2 text-sm italic lg:text-xl">
+                <span className="text-xl text-gray-400 leading-none">&ldquo;&nbsp;</span>
+                  Learning about regenerative agriculture has forced me to rethink everything I knew about the arts and culture. 
+                  This is our way of trying to find a more positive future for our children.
+                <span className="text-xl text-gray-400 leading-none">&ldquo;&nbsp;</span>
+              </p>
+              <cite className="text-sm mx-5 lg:text-sm">Karla Sánchez Cepeda</cite>
+            </blockquote>
+          </div>
+           <div className="flex justify-center items-center mx-8 ">
+            <Image src="/karla.png" alt="oisin" width="96" height="96" className="rounded-full" /> 
+          </div>
         </div>
       </div>
-      <div className="absolute top-0 -right-0.5 z-[-1]">
-        <svg className="fill-current h-screen w-full opacity-70" viewBox="0 0 473 1010" xmlns="http://www.w3.org/2000/svg">
-        <path d="M115.8 1024L137.4 1002.67C159 981.333 202.2 938.667 205.88 896C209.72 853.333 173.88 810.667 123.8 768C73.72 725.333 9.08 682.667 25.72 640C42.2 597.333 139.8 554.667 150.2 512C160.6 469.333 83.8 426.667 74.52 384C65.08 341.333 123.32 298.667 122.2 256C121.08 213.333 60.92 170.667 30.68 128C0.599957 85.3333 0.599976 42.6667 0.599976 21.3333V0H511V21.3333C511 42.6667 511 85.3333 511 128C511 170.667 511 213.333 511 256C511 298.667 511 341.333 511 384C511 426.667 511 469.333 511 512C511 554.667 511 597.333 511 640C511 682.667 511 725.333 511 768C511 810.667 511 853.333 511 896C511 938.667 511 981.333 511 1002.67V1024H115.8Z" fill="#F4EBCD"/>
-        </svg>
+      <div className="absolute top-0 -right-0 z-[-1] bg-form-landing bg-cover h-[130vh] md:h-screen w-full opacity-40">
       </div>
     </div>
-    <div className="bg-blue-100 h-screen w-full 2xl:mx-auto max-w-screen-2xl">
-     Contact page
+    <div className="h-screen w-full 2xl:mx-auto max-w-screen-2xl bg-bg-contact bg-cover opacity-90">
+      <div className="flex flex-col">
+          <div className="flex flex-col md:flex-row">
+            <div className="text-white font-lato mx-10 my-10 text-lg md:flex-1">
+              <p>
+                We aim to provide an environment for artists, farmers, scientists, and practitioners from other disciplines to work beyond traditional boundaries. 
+              </p>
+              <p className="my-10 font-lato">
+                We are a culture laboratory based within a working farm in Ireland. 
+              </p>
+            </div>
+            <div className="flex-1 flex flex-col text-white items-center my-10 mx-10 font-lato">
+              Form
+            </div>
+        </div>
+        <div className="flex justify-center items-center text-white font-lato">
+          Social Media
+        </div>
+      </div>
     </div>
     </>
   )
