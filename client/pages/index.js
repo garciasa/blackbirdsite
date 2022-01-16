@@ -116,8 +116,14 @@ export default function Home() {
                 We are a culture laboratory based within a working farm in Ireland. 
               </p>
             </div>
-            <div className="flex-1 flex flex-col text-white items-center my-10 mx-10 font-lato">
-              Form
+            <div className="flex-1 flex flex-col text-white content-start my-10 mx-10 font-lato">
+             <label for="name" className="pl-1">Name</label>
+             <input type="text" name="name" className="mb-4 rounded-lg w-full h-9 opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent" />
+             <label for="email" className="pl-1">Email</label>
+             <input type="text" name="email" className="mb-4 rounded-lg w-full h-9 opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent" />
+             <label for="message" className="pl-1">Message</label>
+             <textarea rows="10" name="message" className="rounded-lg w-full opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent"/>
+              
             </div>
         </div>
         <div className="flex justify-center items-center text-white font-lato">
