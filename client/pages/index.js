@@ -12,10 +12,10 @@ export default function Home() {
     <div className="flex flex-col bg-hero-section min-h-screen 2xl:mx-auto max-w-screen-2xl bg-cover bg-center lg:bg-left ">
       <nav className="flex items-center justify-between p-2 h-20 mr-2 ml-2">
         <div className="flex items-center justify-center">
-          <Image src="/logo-web.svg" alt="" width="40" height="40" />
+          <Image src="/logo-web.svg" alt="" width="45" height="45" />
           <div className="flex flex-col ml-3">
             <span className="font-architect text-sm text-[#27292B] tracking-wider">BlackBird</span>
-            <span className="font-anton text-xs text-[#27292B] uppercase tracking-wider">Cultur Lab</span>
+            <span className="font-anton text-sm text-[#D99700] uppercase tracking-wider">Cultur Lab</span>
           </div>
         </div>
         <div className="hidden lg:flex space-x-10 mx-4">
@@ -38,8 +38,8 @@ export default function Home() {
         </div>
       </nav>
       <div className="flex flex-col flex-1 py-5 md:items-center md:py-10 lg:items-start lg:ml-5 lg:py-48">
-        <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#4F5154]">Where arts and</h1>
-        <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#4F5154]">farming life meet</h1>
+        <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#574646]">Where arts and</h1>
+        <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#574646]">farming life meet</h1>
       </div>
     </div>
     <div className="flex flex-col lg:h-screen w-full max-w-screen-2xl 2xl:mx-auto relative">
@@ -117,17 +117,29 @@ export default function Home() {
               </p>
             </div>
             <div className="flex-1 flex flex-col text-white content-start my-10 mx-10 font-lato">
-             <label for="name" className="pl-1">Name</label>
+             <label htmlFor="name" className="pl-1">Name</label>
              <input type="text" name="name" className="mb-4 rounded-lg w-full h-9 opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent" />
-             <label for="email" className="pl-1">Email</label>
+             <label htmlFor="email" className="pl-1">Email</label>
              <input type="text" name="email" className="mb-4 rounded-lg w-full h-9 opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent" />
-             <label for="message" className="pl-1">Message</label>
+             <label htmlFor="message" className="pl-1">Message</label>
              <textarea rows="10" name="message" className="rounded-lg w-full opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent"/>
-              
+             <div className="w-full flex flex-1 items-center justify-center">
+                <button className="mx-10 w-48 md:my-10 font-lato font-bold text-white shadow-lg rounded bg-[#D4AF37]/60 py-2 px-4">Send</button> 
+             </div>
             </div>
         </div>
         <div className="flex justify-center items-center text-white font-lato">
-          Social Media
+          <span class="mx-4">Find us here </span>
+          <div class="w-10 border-t border-gray-400"></div>
+          <div className="mx-3">
+            <Image src="/facebook_main_logo.png" width="24" height="24" />
+          </div>
+          <div className="mx-3">
+            <Image src="/twitter_main_logo.png" width="24" height="24" />
+          </div>
+          <div className="mx-3">
+            <Image src="/instagram_main_logo.png" width="24" height="24" />
+          </div>
         </div>
       </div>
     </div>
