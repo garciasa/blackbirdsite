@@ -25,9 +25,9 @@ export default function Home() {
         </div>
         {/* Mobile */}
         <div className="lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400">
+          <button className="flex items-center px-3 py-2 border rounded border-[#574646]">
             <svg
-              className="fill-current h-3 w-3"
+              className="fill-current h-3 w-3 text-[#574646]"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -105,7 +105,7 @@ export default function Home() {
       <div className="absolute top-0 -right-0 z-[-1] bg-form-landing bg-cover h-[130vh] md:h-screen w-full opacity-40">
       </div>
     </div>
-    <div className="h-screen w-full 2xl:mx-auto max-w-screen-2xl bg-bg-contact bg-cover opacity-90">
+    <div className="h-screen w-full 2xl:mx-auto max-w-screen-2xl bg-bg-contact bg-cover opacity-90 md:h-screen h-[120vh]">
       <div className="flex flex-col">
           <div className="flex flex-col md:flex-row">
             <div className="text-white font-lato mx-10 my-10 text-lg md:flex-1">
@@ -116,15 +116,15 @@ export default function Home() {
                 We are a culture laboratory based within a working farm in Ireland. 
               </p>
             </div>
-            <div className="flex-1 flex flex-col text-white content-start my-10 mx-10 font-lato">
+            <div className="flex-1 flex flex-col text-white content-start sm:my-5 md:my-10  mx-10 font-lato">
              <label htmlFor="name" className="pl-1">Name</label>
              <input type="text" name="name" className="mb-4 rounded-lg w-full h-9 opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent" />
              <label htmlFor="email" className="pl-1">Email</label>
              <input type="text" name="email" className="mb-4 rounded-lg w-full h-9 opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent" />
              <label htmlFor="message" className="pl-1">Message</label>
              <textarea rows="10" name="message" className="rounded-lg w-full opacity-70 text-black p-3 focus:outline-none focus:ring-2 focus:ring-[#f7b520] focus:border-transparent"/>
-             <div className="w-full flex flex-1 items-center justify-center">
-                <button className="mx-10 w-48 md:my-10 font-lato font-bold text-white shadow-lg rounded bg-[#D4AF37]/60 py-2 px-4">Send</button> 
+             <div className="w-full flex flex-1 items-center justify-center my-5 md:my-10">
+                <button className="mx-10 w-48 font-lato font-bold text-white shadow-lg rounded bg-[#D4AF37]/60 py-2 px-4">Send</button> 
              </div>
             </div>
         </div>
