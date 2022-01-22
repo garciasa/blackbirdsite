@@ -42,7 +42,7 @@ export default function Home() {
         <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#574646]">farming life meet</h1>
       </div>
     </div>
-    <div className="flex flex-col lg:h-screen w-full max-w-screen-2xl 2xl:mx-auto relative">
+    <div className="flex flex-col lg:h-screen w-full max-w-screen-2xl 2xl:mx-auto relative ">
       <div className="flex flex-1 flex-col lg:flex-row">
         <div className="flex flex-1 my-7 mb-5 y-7 md:mb-1 lg:mx-7 px-10 mx-auto ">
           <Image src="/photo-house.png" width="700" height="400" className="object-cover rounded-lg" />
@@ -105,7 +105,7 @@ export default function Home() {
       <div className="absolute top-0 -right-0 z-[-1] bg-form-landing bg-cover h-[130vh] md:h-screen w-full opacity-40">
       </div>
     </div>
-    <div className="h-screen w-full 2xl:mx-auto max-w-screen-2xl bg-bg-contact bg-cover opacity-90 md:h-screen h-[120vh]">
+    <div className="w-full 2xl:mx-auto max-w-screen-2xl bg-bg-contact bg-cover opacity-90 min-h-screen ">
       <div className="flex flex-col">
           <div className="flex flex-col md:flex-row">
             <div className="text-white font-lato mx-10 my-10 text-lg md:flex-1">
@@ -129,8 +129,8 @@ export default function Home() {
             </div>
         </div>
         <div className="flex justify-center items-center text-white font-lato">
-          <span class="mx-4">Find us here </span>
-          <div class="w-10 border-t border-gray-400"></div>
+          <span className="mx-4">Find us here </span>
+          <div className="w-10 border-t border-gray-400"></div>
           <div className="mx-3">
             <Image src="/facebook_main_logo.png" width="24" height="24" />
           </div>
