@@ -20,7 +20,6 @@ export default function Home() {
         </div>
         <div className="hidden lg:flex space-x-10 mx-4">
           <a href="#" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">About</a>
-          <a href="#" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">News</a>
           <a href="#" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">Contact</a>
         </div>
         {/* Mobile */}
@@ -81,7 +80,7 @@ export default function Home() {
                   There is an urgency to look at ecological processes in their broadest sense. We are all interconnected.
                 <span className="text-xl text-gray-400 leading-none">&ldquo;&nbsp;</span>
               </p>
-              <cite className="text-sm mx-5 lg:text-lg">Oisí O'Connell</cite>
+              <cite className="text-sm mx-5 lg:text-lg">Oisín O'Connell</cite>
             </blockquote>
           </div>
         </div>
@@ -94,7 +93,7 @@ export default function Home() {
                   This is our way of trying to find a more positive future for our children.
                 <span className="text-xl text-gray-400 leading-none">&ldquo;&nbsp;</span>
               </p>
-              <cite className="text-sm mx-5 lg:text-sm">Karla Sánchez Cepeda</cite>
+              <cite className="text-sm mx-5 lg:text-lg">Karla Sánchez Zepeda</cite>
             </blockquote>
           </div>
            <div className="flex justify-center items-center mx-8 ">
