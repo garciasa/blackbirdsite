@@ -5,9 +5,15 @@ export default function Home() {
   return (
     <>
     <Head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&family=Architects+Daughter&display=swap" rel="stylesheet" />
+      <title>BlackBird Cultur Lab</title>
+      <link rel="icon" href="/images/logo.png" />
+
+      <meta property="og:title" content="BlackBird Cultur Lab" key="ogtitle" />
+      <meta property="og:description" content="We aim to provide an environment for artists, farmers, scientists, and practitioners from other disciplines to work beyond traditional boundaries." key="ogdesc" />
+      <meta property="og:type" content="website" key="ogtype" />
+      <meta property="og:url" content="https://blackbirdcultur-lab.com/" key="ogurl"/>
+      <meta property="og:image" content="https://blackbirdcultur-lab.com/logo.png" key="ogimage"/>
+      <meta property="og:site_name" content="https://blackbirdcultur-lab/" key="ogsitename" />
     </Head>
     <div className="flex flex-col bg-hero-section min-h-screen 2xl:mx-auto max-w-screen-2xl bg-cover bg-center lg:bg-left ">
       <nav className="flex items-center justify-between p-2 h-20 mr-2 ml-2">
