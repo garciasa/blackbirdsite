@@ -2,19 +2,3 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
-/* From Public Directory */
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/Lato.ttf');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Anton';
-  src: url('/fonts/Anton.ttf');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Architects+Daughter';
-  src: url('/fonts/Architects+Daughter.ttf');
-  font-display: swap;
-}
