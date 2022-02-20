@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         'hero-section' : "url('/hero.png')",
         'form-landing' : "url('/form-landing.svg')",
+        'blog-form-1'  : "url('/blog-form-1.svg')",
         'bg-contact' : "url('/bg-contact.png')",
       },
       fontFamily: {
