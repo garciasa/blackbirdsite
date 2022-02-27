@@ -1,15 +1,27 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function CardPost({isMain=false, imageUrl}){
+export default function CardPost({isMain=false, imageUrl, slug}){
     return(
         <div className="max-w-2xl rounded-lg overflow-hidden shadow-lg">
-            {!isMain && <Image className="w-full" layout="responsive" width="640" height="400" src={imageUrl} alt="Mountain" />}
-            <div class="px-6 py-4">
+            {!isMain && 
+                <Link href={`/blog/${slug}`}>
+                    <a className='hover:cursor-pointer'>
+                        <Image className="w-full" layout="responsive" width="640" height="400" src={imageUrl} alt="Mountain" />
+                    </a>
+                </Link>}
+            <div className="px-6 py-4">
 
-                <div className="font-bold text-xl mb-2">Mountain</div>
+                <div className="font-bold text-xl mb-2">
+                    <Link href={`/blog/${slug}`}>
+                        Mountain
+                    </Link>
+                </div>
                 <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    <Link href={`/blog/${slug}`}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    </Link>
                 </p>
             </div>
 

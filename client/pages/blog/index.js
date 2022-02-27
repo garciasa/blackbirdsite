@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import CardPost from '../components/CardPost';
-import NavMenu from '../components/NavMenu';
+import Link from 'next/link';
 import Image from 'next/image'
+import CardPost from '../../components/CardPost';
+import NavMenu from '../../components/NavMenu';
+import SocialFooter from '../../components/SocialFooter';
 
 export default function Blog(){
     return(
@@ -21,16 +23,26 @@ export default function Blog(){
             <div className="flex flex-col 2xl:mx-auto max-w-screen-2xl">
                 <NavMenu />
                 <div className="flex flex-col md:flex-row px-4 gap-4 pb-6">
-                    <div className='flex flex-1 justify-center'>
-                        <Image className='rounded-lg' src="/post-image-4.png" width={640} height={400}/>
+                    <div className='flex flex-1 justify-center hover:cursor-pointer'>
+                    <Link href="/blog/slug-slug">
+                        <a>
+                            <Image className='rounded-lg' src="/post-image-4.png" width={640} height={400}/>
+                        </a>
+                    </Link>
                     </div>
                     <div className='flex flex-col flex-1 justify-center'>
-                        <div class="px-6 py-4">
-                            <div className="font-bold text-xl mb-2">Main Post</div>
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">
+                                <Link href="/blog/slug-slug">
+                                     Main Post
+                                </Link>
+                            </div>
                             <p className="text-gray-700 text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                <Link href="/blog/slug-slug">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                                </Link>
                             </p>
                         </div>
                         <div className="flex px-6 pt-4 pb-6">
@@ -43,24 +55,12 @@ export default function Blog(){
                     </div>
                 </div>
                 <div className='grid md:grid-cols-3 justify-items-center px-4 gap-4 '>
-                    <CardPost imageUrl="/post-image.png" />                    
-                    <CardPost imageUrl="/post-image-1.png" />
-                    <CardPost imageUrl="/post-image-2.png" />
+                    <CardPost imageUrl="/post-image.png" slug="slug-1" />                    
+                    <CardPost imageUrl="/post-image-1.png" slug="slug-2" />
+                    <CardPost imageUrl="/post-image-2.png" slug="slug-3" />
                 </div>
             </div>
-            <div className="flex justify-center items-center font-lato pb-10 pt-20">
-                <span className="mx-4">Find us here </span>
-                <div className="w-10 border-t border-gray-400"></div>
-                <div className="mx-3">
-                    <Image src="/facebook-negative.png" width="24" height="24" />
-                </div>
-                <div className="mx-3">
-                    <Image src="/twitter-negative.png" width="24" height="24" />
-                </div>
-                <div className="mx-3">
-                    <Image src="/instagram-negative.png" width="24" height="24" />
-                </div>
-            </div>
+            <SocialFooter type="negative" />
         </>
     );
 }

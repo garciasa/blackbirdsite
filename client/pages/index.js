@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { useState } from 'react';
 import NavMenu from '../components/NavMenu';
+import SocialFooter from '../components/SocialFooter';
 
 export default function Home() {
   
@@ -182,19 +183,7 @@ export default function Home() {
              </div>
             </div>
         </div>
-        <div className="flex justify-center items-center text-white font-lato">
-          <span className="mx-4">Find us here </span>
-          <div className="w-10 border-t border-gray-400"></div>
-          <div className="mx-3">
-            <Image src="/facebook_main_logo.png" width="24" height="24" />
-          </div>
-          <div className="mx-3">
-            <Image src="/twitter_main_logo.png" width="24" height="24" />
-          </div>
-          <div className="mx-3">
-            <Image src="/instagram_main_logo.png" width="24" height="24" />
-          </div>
-        </div>
+        <SocialFooter type="positive" />
       </div>
     </div>
     </>

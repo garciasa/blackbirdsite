@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function NavMenu () {
     const [visible, setVisible] = useState(false);
+    const router = useRouter();
     
     const onMenuButton = () => {
         setVisible(!visible);
@@ -19,8 +21,12 @@ export default function NavMenu () {
             </div>
             </div>
             <div className="hidden lg:flex space-x-10 mx-4">
+            { router.pathname === '/blog' ?
+                <Link href="/"><a className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">Home</a></Link>
+                : 
+                <Link href="/blog"><a className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">Blog</a></Link>
+            }
             <a href="/#about" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">About</a>
-            <Link href="/blog"><a className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">Blog</a></Link>
             <a href="/#contact" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">Contact</a>
             </div>
             {/* Mobile */}
@@ -39,8 +45,8 @@ export default function NavMenu () {
             <div className={ visible ? 'visible mb-5 lg:hidden' : 'hidden'}>
             <ul className="w-[35vw] md:w-[15vw] bg-[#F4EBCD]/25 py-2 rounded-lg mt-10">
                 <li onClick={onMenuButton} className="cursor-pointer font-lat text-right pr-2">X</li>
-                <li><a href="#about" className="pl-2 font-lato ">About</a></li>
                 <li><Link href="/blog"><a className="pl-2 font-lato ">Blog</a></Link></li>
+                <li><a href="#about" className="pl-2 font-lato ">About</a></li>
                 <li><a href="#contact" className="pl-2 font-lato">Contact</a></li>
             </ul>
             </div>
