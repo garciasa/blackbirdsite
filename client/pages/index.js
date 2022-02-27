@@ -148,7 +148,7 @@ export default function Home() {
             </blockquote>
           </div>
            <div className="flex justify-center items-center mx-8 ">
-            <Image src="/karla.png" alt="oisin" width="96" height="96" className="rounded-full" /> 
+            <Image src="/karla.png" alt="karla" width="96" height="96" className="rounded-full" /> 
           </div>
         </div>
       </div>
