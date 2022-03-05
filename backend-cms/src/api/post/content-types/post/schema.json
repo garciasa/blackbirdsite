@@ -15,24 +15,17 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
-    "content": {
-      "type": "richtext"
-    },
     "cover": {
+      "allowedTypes": [
+        "images"
+      ],
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
+      "required": true
     },
-    "slug": {
-      "type": "string"
+    "content": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
