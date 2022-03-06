@@ -16,16 +16,25 @@
       "type": "string"
     },
     "cover": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "slug": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "posts"
     }
   }
 }
