@@ -35,6 +35,9 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "posts"
+    },
+    "ogdescription": {
+      "type": "text"
     }
   }
 }
