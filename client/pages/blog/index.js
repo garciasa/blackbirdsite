@@ -1,11 +1,29 @@
 import Head from 'next/head'
 import Link from 'next/link';
 import Image from 'next/image'
+import ReactMarkdown from 'react-markdown';
 import CardPost from '../../components/CardPost';
 import NavMenu from '../../components/NavMenu';
 import SocialFooter from '../../components/SocialFooter';
+import AuthorCard from '../../components/AuthorCard';
 
-export default function Blog(){
+export async function getServerSideProps(){
+    const resp = await fetch(
+        "https://blackbirdcms.azurewebsites.net/api/posts?sort=createdAt:DESC&populate=cover,author"
+    );
+    return {
+        props: {
+            posts: await resp.json()
+        }
+    }
+}
+
+
+export default function Blog({posts}){
+    // We consider mainPost the most recent
+    const mainPost = posts.data[0];
+    const restPosts = posts.data.slice(1);
+
     return(
         <>
             <Head>
@@ -13,8 +31,8 @@ export default function Blog(){
                 <link rel="icon" href="/logo.png" />
 
                 <meta property="og:title" content="Blackbird Cultur Lab Blog" key="ogtitle" />
-                <meta property="og:description" content="We aim to provide an environment for artists, farmers, scientists, and practitioners from other disciplines to work beyond traditional boundaries." key="ogdesc" />
-                <meta property="og:type" content="website" key="ogtype" />
+                <meta property="og:description" content="This page is about blogging for artists, farmers, scientists, and practitioners from other disciplines to work beyond traditional boundaries." key="ogdesc" />
+                <meta property="og:type" content="blog" key="ogtype" />
                 <meta property="og:url" content="https://blackbirdcultur-lab.com/blog" key="ogurl"/>
                 <meta property="og:image" content="https://blackbirdcultur-lab.com/logo.png" key="ogimage"/>
                 <meta property="og:site_name" content="https://blackbirdcultur-lab/" key="ogsitename" />
@@ -24,40 +42,36 @@ export default function Blog(){
                 <NavMenu />
                 <div className="flex flex-col md:flex-row px-4 gap-4 pb-6">
                     <div className='flex flex-1 justify-center hover:cursor-pointer'>
-                    <Link href="/blog/slug-slug">
+                    <Link href={`/blog/${mainPost.attributes.slug}`}>
                         <a>
-                            <Image className='rounded-lg' src="/post-image-4.png" width={640} height={400}/>
+                            <Image className='rounded-lg' src={mainPost.attributes.cover.data.attributes.formats.small.url} width={640} height={400}/>
                         </a>
                     </Link>
                     </div>
                     <div className='flex flex-col flex-1 justify-center'>
                         <div className="px-6 py-4">
                             <div className="font-bold text-xl mb-2">
-                                <Link href="/blog/slug-slug">
-                                     Main Post
+                                <Link href={`/blog/${mainPost.attributes.slug}`}>
+                                     {mainPost.attributes.title}
                                 </Link>
                             </div>
-                            <p className="text-gray-700 text-base">
-                                <Link href="/blog/slug-slug">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                                </Link>
-                            </p>
-                        </div>
-                        <div className="flex px-6 pt-4 pb-6">
-                            <Image src="/karla.png" alt="oisin" width="36" height="36" className="rounded-full hidden" />
-                            <div className='flex flex-col'>
-                                <div className='px-3 text-xs'>Karla Sánchez Zepeda</div>
-                                <div className='px-3 text-xs text-gray-500 '>Owner</div>
+                            <div className="text-gray-700 text-base">
+                                <ReactMarkdown children={`${mainPost.attributes.content.substring(0,490)}...`} />
+                                
                             </div>
                         </div>
+                        <AuthorCard author={mainPost.attributes.author} />
                     </div>
                 </div>
                 <div className='grid md:grid-cols-3 justify-items-center px-4 gap-4 '>
-                    <CardPost imageUrl="/post-image.png" slug="slug-1" />                    
-                    <CardPost imageUrl="/post-image-1.png" slug="slug-2" />
-                    <CardPost imageUrl="/post-image-2.png" slug="slug-3" />
+                    {restPosts.map(p => 
+                        <CardPost key={p.id} 
+                                  imageUrl={p.attributes.cover.data.attributes.formats.small.url} 
+                                  slug={p.attributes.slug}
+                                  content={p.attributes.content}
+                                  author={p.attributes.author}
+                                  title={p.attributes.title}
+                        />)}
                 </div>
             </div>
             <SocialFooter type="negative" />
