@@ -55,7 +55,7 @@ export default function Blog({posts}){
                                      {mainPost.attributes.title}
                                 </Link>
                             </div>
-                            <div className="text-gray-700 text-base">
+                            <div className="text-gray-700 text-base prose">
                                 <ReactMarkdown children={`${mainPost.attributes.content.substring(0,490)}...`} />
                                 
                             </div>

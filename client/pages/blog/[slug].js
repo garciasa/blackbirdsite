@@ -42,11 +42,11 @@ export default function Page({post}) {
                     <div className="flex-1">
                         <AuthorCard author={attributes.author} />
                     </div>
-                    <div className="flex-1 text-xl text-black font-bold">
+                    <div className="flex-1 text-3xl text-black font-bold">
                         {attributes.title}
                     </div>
                     <div className="flex-1 text-base text-justify space-y-6">
-                        <ReactMarkdown>
+                        <ReactMarkdown className="prose md:prose-lg lg:prose-xl max-w-none">
                             {attributes.content}
                         </ReactMarkdown>
                     </div>

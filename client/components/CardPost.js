@@ -14,13 +14,12 @@ export default function CardPost({isMain=false, imageUrl, slug, content, author,
                     </a>
                 </Link>}
             <div className="px-6 py-4">
-
                 <div className="font-bold text-xl mb-2">
                     <Link href={`/blog/${slug}`}>
                        {title} 
                     </Link>
                 </div>
-                <div className="text-gray-700 text-base">
+                <div className="text-gray-700 text-base prose">
                         <ReactMarkdown>
                             {`${content.substring(0,240)}...`}
                         </ReactMarkdown>
