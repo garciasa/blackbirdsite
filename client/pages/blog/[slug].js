@@ -20,6 +20,7 @@ export async function getServerSideProps({params}){
 
 export default function Page({post}) {
     const {attributes} = post.data[0];
+    console.log(attributes);
     return(
         <>
             <Head>
@@ -37,7 +38,7 @@ export default function Page({post}) {
                 <NavMenu />
                 <article className="flex flex-col p-8 font-lato">
                     <div className="relative md:h-[32rem] h-48 w-full">
-                        <Image className="rounded-lg" src={attributes.cover.data.attributes.formats.medium.url} layout="fill" alt="cover image Post"/>
+                        <Image className="rounded-lg" src={attributes.cover.data.attributes.url} layout="fill" alt="cover image Post"/>
 
                     </div>
                     <div className="flex-1">
