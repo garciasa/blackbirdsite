@@ -1,9 +1,10 @@
-import Image from 'next/image'
-import Head from 'next/head'
+import Image from 'next/image';
+import Head from 'next/head';
 import { useState } from 'react';
+import NavMenu from '../components/NavMenu';
+import SocialFooter from '../components/SocialFooter';
 
 export default function Home() {
-  const [visible, setVisible] = useState(false);
   
   const [name,setName] = useState("");
   const [email, setEmail] = useState("");
@@ -70,9 +71,6 @@ export default function Home() {
 
     }
   }
-  const onMenuButton = () => {
-    setVisible(!visible);
-  }
 
   return (
     <>
@@ -88,39 +86,7 @@ export default function Home() {
       <meta property="og:site_name" content="https://blackbirdcultur-lab/" key="ogsitename" />
     </Head>
     <div className="flex flex-col bg-hero-section min-h-screen 2xl:mx-auto max-w-screen-2xl bg-cover bg-center lg:bg-left ">
-      <nav className="flex items-center justify-between p-2 h-20 mr-2 ml-2">
-        <div className="flex items-center justify-center">
-          <Image src="/logo-web.svg" alt="" width="45" height="45" />
-          <div className="flex flex-col ml-3">
-            <span className="font-architect text-sm text-[#27292B] tracking-wider">BlackBird</span>
-            <span className="font-anton text-sm text-[#D99700] uppercase tracking-wider">Cultur Lab</span>
-          </div>
-        </div>
-        <div className="hidden lg:flex space-x-10 mx-4">
-          <a href="#about" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">About</a>
-          <a href="#contact" className="border-b-2 border-transparent text-[#27292B] hover:border-b-2 hover:border-[#F7B520] transition duration-500">Contact</a>
-        </div>
-        {/* Mobile */}
-        <div className={ visible ? `hidden`: `visible lg:hidden`}>
-          <button onClick={onMenuButton} className="flex items-center px-3 py-2 border rounded border-[#574646]">
-            <svg
-              className="fill-current h-3 w-3 text-[#574646]"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div className={ visible ? 'visible mb-5 lg:hidden' : 'hidden'}>
-          <ul className="w-[35vw] md:w-[15vw] bg-[#F4EBCD]/25 py-2 rounded-lg mt-10">
-            <li onClick={onMenuButton} className="cursor-pointer font-lat text-right pr-2">X</li>
-            <li><a href="#about" className="pl-2 font-lato ">About</a></li>
-            <li><a href="#contact" className="pl-2 font-lato">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      <NavMenu />
       <div className="flex flex-col flex-1 py-5 md:items-center md:py-10 lg:items-start lg:ml-5 lg:py-48">
         <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#574646]">Where arts and</h1>
         <h1 className="font-lato font-bold text-5xl lg:text-6xl 2xl:text-7xl text-[#574646]">farming life meet</h1>
@@ -182,7 +148,7 @@ export default function Home() {
             </blockquote>
           </div>
            <div className="flex justify-center items-center mx-8 ">
-            <Image src="/karla.png" alt="oisin" width="96" height="96" className="rounded-full" /> 
+            <Image src="/karla.png" alt="karla" width="96" height="96" className="rounded-full" /> 
           </div>
         </div>
       </div>
@@ -217,19 +183,7 @@ export default function Home() {
              </div>
             </div>
         </div>
-        <div className="flex justify-center items-center text-white font-lato">
-          <span className="mx-4">Find us here </span>
-          <div className="w-10 border-t border-gray-400"></div>
-          <div className="mx-3">
-            <Image src="/facebook_main_logo.png" width="24" height="24" />
-          </div>
-          <div className="mx-3">
-            <Image src="/twitter_main_logo.png" width="24" height="24" />
-          </div>
-          <div className="mx-3">
-            <Image src="/instagram_main_logo.png" width="24" height="24" />
-          </div>
-        </div>
+        <SocialFooter type="positive" />
       </div>
     </div>
     </>
