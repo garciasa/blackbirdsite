@@ -7,13 +7,15 @@ export default function SocialFooter({type}){
         <div className="flex justify-center items-center font-lato pb-10 pt-20">
             <span className={`mx-4 ${colorText}`}>Find us here </span>
             <div className={`w-10 border-t ${colorLine}`}></div>
+            {/*
             <div className="mx-3">
                 <Image src={`/facebook-${type}.png`} width="24" height="24" />
             </div>
-            <div className="mx-3">
-                <Image src={`/twitter-${type}.png`} width="24" height="24" />
+            */}
+            <div className="mx-2">
+                <Image src={`/linkedin-${type}.png`} width="24" height="24" />
             </div>
-            <div className="mx-3">
+            <div className="mx-2">
                 <Image src={`/instagram-${type}.png`} width="24" height="24" />
             </div>
         </div>

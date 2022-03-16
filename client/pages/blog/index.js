@@ -56,11 +56,13 @@ export default function Blog({posts}){
                                 </Link>
                             </div>
                             <div className="text-gray-700 text-base prose">
-                                <ReactMarkdown children={`${mainPost.attributes.content.substring(0,490)}...`} />
+                                <ReactMarkdown children={`${mainPost.attributes.content.substring(0,350)}...`} />
                                 
                             </div>
                         </div>
-                        <AuthorCard author={mainPost.attributes.author} />
+                        { (mainPost.attributes.author !== null || mainPost.attributes.author !== undefined) &&
+                            <AuthorCard author={mainPost.attributes.author} />
+                        }
                     </div>
                 </div>
                 <div className='grid md:grid-cols-3 justify-items-center px-4 gap-4 '>

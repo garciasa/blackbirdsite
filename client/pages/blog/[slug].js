@@ -35,14 +35,17 @@ export default function Page({post}) {
             <div className="absolute bg-bottom top-0 right-0 z-[-1] bg-blog-form-1 bg-cover h-screen w-full opacity-30"></div>
             <div className="flex flex-col 2xl:mx-auto max-w-screen-2xl">
                 <NavMenu />
-                <article className="flex flex-col p-4 font-lato">
+                <article className="flex flex-col p-8 font-lato">
                     <div className="relative md:h-[32rem] h-48 w-full">
-                        <Image className="rounded-lg" src={attributes.cover.data.attributes.url} layout="fill" alt="cover image Post"/>
+                        <Image className="rounded-lg" src={attributes.cover.data.attributes.formats.medium.url} layout="fill" alt="cover image Post"/>
+
                     </div>
                     <div className="flex-1">
-                        <AuthorCard author={attributes.author} />
+                        { (attributes.author !== null || attributes.author !== undefined) &&
+                            <AuthorCard author={attributes.author} />
+                        }
                     </div>
-                    <div className="flex-1 text-3xl text-black font-bold">
+                    <div className="flex-1 text-3xl text-black font-bold pb-8">
                         {attributes.title}
                     </div>
                     <div className="flex-1 text-base text-justify space-y-6">
@@ -51,7 +54,7 @@ export default function Page({post}) {
                         </ReactMarkdown>
                     </div>
                 </article>
-                <div className="p-4">
+                <div className="p-8">
                     <Link href="/blog">
                         <button className="bg-[#D99700] text-white font-bold py-2 rounded-full w-24">
                             Back
