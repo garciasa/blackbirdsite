@@ -45,8 +45,8 @@ export default function Page({post}) {
                     <div className="flex-1 text-3xl text-black font-bold">
                         {attributes.title}
                     </div>
-                    <div className="flex-1 text-base text-justify space-y-6">
-                        <ReactMarkdown es>
+                    <div className="flex-1 text-base text-justify space-y-6 prose prose md:max-w-none">
+                        <ReactMarkdown linkTarget="_blank">
                             {attributes.content}
                         </ReactMarkdown>
                     </div>
