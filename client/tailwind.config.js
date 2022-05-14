@@ -3,6 +3,9 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      colors:{
+        "cms-link": "#D99700"
+      },
       backgroundImage: {
         'hero-section' : "url('/hero.png')",
         'form-landing' : "url('/form-landing.svg')",
