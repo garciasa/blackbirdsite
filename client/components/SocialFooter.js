@@ -13,10 +13,10 @@ export default function SocialFooter({type}){
             </div>
             */}
             <div className="mx-2">
-                <Image src={`/linkedin-${type}.png`} width="24" height="24" />
+                <a href="https://www.linkedin.com/in/karla-s%C3%A1nchez-o-connell-82148a1a/" target="_blank" alt="linkedin link"><Image src={`/linkedin-${type}.png`} width="24" height="24" /></a>
             </div>
             <div className="mx-2">
-                <Image src={`/instagram-${type}.png`} width="24" height="24" />
+                <a href="https://www.instagram.com/blackbirdculturlab/" target="_blank" alt="Instagram link"><Image src={`/instagram-${type}.png`} width="24" height="24" /></a>
             </div>
         </div>
     );
