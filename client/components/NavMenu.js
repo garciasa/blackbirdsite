@@ -14,11 +14,13 @@ export default function NavMenu () {
     return(
         <nav className="flex items-center justify-between p-2 h-20 mr-2 ml-2">
             <div className="flex items-center justify-center">
-            <Image src="/logo-web.svg" alt="" width="45" height="45" />
-            <div className="flex flex-col ml-3">
+            <a href="https://www.blackbirdcultur-lab.com/">
+                <Image src="/logo-web.svg" alt="" width="45" height="45" />
+            </a>
+            <div className="flex flex-col ml-3">                
                 <span className="font-architect text-sm text-[#27292B] tracking-wider">BlackBird</span>
                 <span className="font-anton text-sm text-[#D99700] uppercase tracking-wider">Cultur Lab</span>
-            </div>
+            </div>        
             </div>
             <div className="hidden lg:flex space-x-10 mx-4">
             { router.pathname === '/blog' ?
