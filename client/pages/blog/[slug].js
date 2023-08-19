@@ -9,7 +9,7 @@ import SocialFooter from "../../components/SocialFooter";
 
 export async function getServerSideProps({params}){
     const resp = await fetch(
-        `https://blackbirdcms.azurewebsites.net/api/posts?filters[slug]=${params.slug}&populate=cover,author`
+        `https://blackbirdcultur-lab-cms.azurewebsites.net/api/posts?filters[slug]=${params.slug}&populate=cover,author`
     );
     return {
         props: {
