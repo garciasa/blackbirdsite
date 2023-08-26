@@ -10,7 +10,7 @@ import AuthorCard from '../../components/AuthorCard';
 export async function getServerSideProps()
 {
     const resp = await fetch(
-        "https://blackbirdcms.azurewebsites.net/api/posts?sort=createdAt:DESC&populate=cover,author"
+        "https://blackbirdcultur-lab-cms.azurewebsites.net/api/posts?sort=createdAt:DESC&populate=cover,author"
     );
     return {
         props: {
