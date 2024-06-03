@@ -63,7 +63,7 @@ export default function Blog({ posts })
                             </div>
                         </div>
                         {(mainPost.attributes.author !== null || mainPost.attributes.author !== undefined) &&
-                            <AuthorCard author={mainPost.attributes.author} />
+                            <AuthorCard author={mainPost.attributes.author} publishedAt={mainPost.attributes.publishedAt} />
                         }
                     </div>
                 </div>
@@ -75,6 +75,7 @@ export default function Blog({ posts })
                             content={p.attributes.content}
                             author={p.attributes.author}
                             title={p.attributes.title}
+                            publishedAt={p.attributes.publishedAt}
                         />)}
                 </div>
             </div>

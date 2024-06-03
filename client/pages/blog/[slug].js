@@ -19,6 +19,9 @@ export async function getServerSideProps({params}){
 }
 
 export default function Page({post}) {
+    const MarkdownComponents = {
+    img: ({node, ...props}) => <Image {...props} src={node.properties.src} height="75%" width="100%" layout="responsive" objectFit="cover" />,
+    };
     const {attributes} = post.data[0];
     return(
         <>
@@ -40,15 +43,17 @@ export default function Page({post}) {
                         <Image className="rounded-lg" src={attributes.cover.data.attributes.url} layout="fill" objectFit="cover" alt="cover image Post"/>
                     </div>
                     <div className="flex-1">
-                        <AuthorCard author={attributes.author} />
+                        <AuthorCard author={attributes.author} publishedAt={attributes.publishedAt} />
                     </div>
                     <div className="flex-1 text-3xl text-black font-bold">
                         {attributes.title}
                     </div>
-                    <div className="flex-1 text-base text-justify space-y-6 prose prose md:max-w-none">
-                        <ReactMarkdown linkTarget="_blank">
-                            {attributes.content}
-                        </ReactMarkdown>
+                    <div className="flex-1 text-base  text-justify space-y-6 prose prose md:max-w-none">
+                        <ReactMarkdown 
+                            linkTarget="_blank"
+                            children={attributes.content}
+                            components={MarkdownComponents}
+                        />
                     </div>
                 </article>
                 <div className="p-4">
