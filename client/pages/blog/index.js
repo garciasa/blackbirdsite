@@ -26,6 +26,11 @@ export default function Blog({ posts })
     const mainPost = posts.data[0];
     const restPosts = posts.data.slice(1);
 
+    const MarkdownComponents = {
+     img: ({node, ...props}) => <Image {...props} objectFit="cover" src={node.properties.src} height="376" width="500"  />,
+     //img: () => <br />,
+  };
+
     return (
         <>
             <Head>
@@ -58,12 +63,16 @@ export default function Blog({ posts })
                                 </Link>
                             </div>
                             <div className="text-gray-700 text-base prose">
-                                <ReactMarkdown linkTarget={"_blank"} children={`${mainPost.attributes.content.substring(0, 350)}...`} />
+                                <ReactMarkdown 
+                                  linkTarget={"_blank"} 
+                                  children={`${mainPost.attributes.content.substring(0, 350)}...`}
+                                  components={MarkdownComponents}
+                                />
 
                             </div>
                         </div>
                         {(mainPost.attributes.author !== null || mainPost.attributes.author !== undefined) &&
-                            <AuthorCard author={mainPost.attributes.author} />
+                            <AuthorCard author={mainPost.attributes.author} publishedAt={mainPost.attributes.publishedAt} />
                         }
                     </div>
                 </div>
@@ -75,6 +84,7 @@ export default function Blog({ posts })
                             content={p.attributes.content}
                             author={p.attributes.author}
                             title={p.attributes.title}
+                            publishedAt={p.attributes.publishedAt}
                         />)}
                 </div>
             </div>
