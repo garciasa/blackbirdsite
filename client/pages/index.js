@@ -95,7 +95,7 @@ export default function Home() {
       <div className="flex flex-col lg:h-screen w-full max-w-screen-2xl 2xl:mx-auto relative" id="about">
         <div className="flex flex-1 flex-col lg:flex-row">
           <div className="flex flex-1 my-7 mb-5 y-7 md:mb-1 lg:mx-7 px-10 mx-auto ">
-            <Image src="/photo-house.png" width="700" height="400" className="object-cover rounded-lg" />
+            <Image alt="Image of the house from one side" src="/photo-house.png" width="700" height="400" className="object-cover rounded-lg" />
           </div>
           <div className="flex flex-col flex-1 text-xs md:text-sm xl:text-lg">
             <div className="flex-1 md:my-7 tracking-wide px-5 lg:mx-0">
@@ -122,7 +122,7 @@ export default function Home() {
         <div className="flex flex-col flex-1 gap-2 sm:gap-0 mt-5 md:mt-0 "  >
           <div className="flex flex-1 flex-col md:flex-row">
             <div className="flex justify-center items-center mx-8 ">
-              <Image src="/oisin.png" alt="oisin" width="96" height="96" className="rounded-full hidden" />
+              <Image src="/oisin.png" alt="oisin picture" width="96" height="96" className="rounded-full hidden" />
             </div>
             <div className="flex-1 flex flex-col justify-center mx-2 ">
               <blockquote className="relative p-4 border-l-2 border-[#f7b520] quote">
@@ -148,7 +148,7 @@ export default function Home() {
               </blockquote>
             </div>
             <div className="flex justify-center items-center mx-8 ">
-              <Image src="/karla.png" alt="karla" width="96" height="96" className="rounded-full" />
+              <Image src="/karla.png" alt="karla picture" width="96" height="96" className="rounded-full" />
             </div>
           </div>
         </div>

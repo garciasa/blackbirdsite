@@ -7,8 +7,7 @@ import NavMenu from '../../components/NavMenu';
 import SocialFooter from '../../components/SocialFooter';
 import AuthorCard from '../../components/AuthorCard';
 
-export async function getServerSideProps()
-{
+export async function getServerSideProps() {
     const resp = await fetch(
         "https://blackbirdcultur-lab-cms.azurewebsites.net/api/posts?sort=createdAt:DESC&populate=cover,author"
     );
@@ -20,16 +19,15 @@ export async function getServerSideProps()
 }
 
 
-export default function Blog({ posts })
-{
+export default function Blog({ posts }) {
     // We consider mainPost the most recent
     const mainPost = posts.data[0];
     const restPosts = posts.data.slice(1);
 
     const MarkdownComponents = {
-     img: ({node, ...props}) => <Image {...props} objectFit="cover" src={node.properties.src} height="376" width="500"  />,
-     //img: () => <br />,
-  };
+        img: ({ node, ...props }) => <Image {...props} alt="image inside the post" objectFit="cover" src={node.properties.src} height="376" width="500" />,
+        //img: () => <br />,
+    };
 
     return (
         <>
@@ -51,7 +49,7 @@ export default function Blog({ posts })
                     <div className='flex flex-1 justify-center hover:cursor-pointer'>
                         <Link href={`/blog/${mainPost.attributes.slug}`}>
                             <a>
-                                <Image className='rounded-lg' src={mainPost.attributes.cover.data.attributes.formats.small.url} width={640} height={400} />
+                                <Image alt="small image inside the blog post" className='rounded-lg' src={mainPost.attributes.cover.data.attributes.formats.small.url} width={640} height={400} />
                             </a>
                         </Link>
                     </div>
@@ -63,10 +61,10 @@ export default function Blog({ posts })
                                 </Link>
                             </div>
                             <div className="text-gray-700 text-base prose">
-                                <ReactMarkdown 
-                                  linkTarget={"_blank"} 
-                                  children={`${mainPost.attributes.content.substring(0, 350)}...`}
-                                  components={MarkdownComponents}
+                                <ReactMarkdown
+                                    linkTarget={"_blank"}
+                                    children={`${mainPost.attributes.content.substring(0, 350)}...`}
+                                    components={MarkdownComponents}
                                 />
 
                             </div>
