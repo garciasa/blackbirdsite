@@ -84,6 +84,7 @@ export default function Home() {
         <meta property="og:url" content="https://blackbirdcultur-lab.com/" key="ogurl" />
         <meta property="og:image" content="https://blackbirdcultur-lab.com/logo.png" key="ogimage" />
         <meta property="og:site_name" content="https://blackbirdcultur-lab/" key="ogsitename" />
+        <script defer data-domain="blackbirdcultur-lab.com" src="https://analytics.agsasoftware.com/js/script.js"></script>
       </Head>
       <div className="flex flex-col bg-hero-section min-h-screen 2xl:mx-auto max-w-screen-2xl bg-cover bg-center lg:bg-left ">
         <NavMenu />
