@@ -41,6 +41,7 @@ export default function Blog({ posts }) {
                 <meta property="og:url" content="https://blackbirdcultur-lab.com/blog" key="ogurl" />
                 <meta property="og:image" content="https://blackbirdcultur-lab.com/logo.png" key="ogimage" />
                 <meta property="og:site_name" content="https://blackbirdcultur-lab/" key="ogsitename" />
+                        <script defer data-domain="blackbirdcultur-lab.com" src="https://analytics.agsasoftware.com/js/script.js"></script>
             </Head>
             <div className="absolute bg-bottom top-0 right-0 z-[-1] bg-blog-form-1 bg-cover h-screen w-full opacity-30"></div>
             <div className="flex flex-col 2xl:mx-auto max-w-screen-2xl">
